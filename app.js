@@ -121,7 +121,7 @@
           const list = SIGNS.filter(s => s.cat === c.id);
           const m = mastered(list);
           return `<button class="cat" data-cat="${c.id}">
-            <img src="signs/${c.icon}.png" alt="">
+            <img src="${byId[c.icon].img}" alt="">
             <span class="txt"><b>${c.fa}</b><small><span class="en">${c.en}</span> · ${fa(list.length)} علامت · تسلط ${fa(m)}</small>
             <span class="bar"><i style="width:${list.length ? 100 * m / list.length : 0}%"></i></span></span>
           </button>`;
