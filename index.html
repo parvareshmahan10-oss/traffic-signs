@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1f4d">
+<title>تمرین علائم رانندگی کویت</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn" id="homeBtn" aria-label="خانه" hidden>
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <h1 id="title">علائم رانندگی</h1>
+  <button class="icon-btn" id="settingsBtn" aria-label="تنظیمات">
+    <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</header>
+
+<main id="app"></main>
+
+<dialog id="settings">
+  <form method="dialog" class="sheet">
+    <h2>تنظیمات</h2>
+    <label class="field">زبان گزینه‌ها
+      <select id="optLang">
+        <option value="en+fa">انگلیسی + فارسی</option>
+        <option value="en">فقط انگلیسی</option>
+        <option value="fa">فقط فارسی</option>
+        <option value="ar">عربی</option>
+        <option value="en+ar">انگلیسی + عربی</option>
+      </select>
+    </label>
+    <label class="field">تعداد سؤال در هر جلسه
+      <select id="qCount">
+        <option value="10">۱۰</option>
+        <option value="20">۲۰</option>
+        <option value="30">۳۰</option>
+        <option value="0">همه</option>
+      </select>
+    </label>
+    <label class="check"><input type="checkbox" id="autoNext"> رفتن خودکار به سؤال بعد بعد از جواب درست</label>
+    <div class="row-btns">
+      <button type="button" class="btn ghost" id="exportBtn">خروجی پیشرفت</button>
+      <button type="button" class="btn ghost" id="importBtn">ورود پیشرفت</button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+    </div>
+    <button type="button" class="btn danger" id="resetBtn">پاک کردن همهٔ آمار</button>
+    <button class="btn primary" value="close">بستن</button>
+  </form>
+</dialog>
+
+<script src="signs.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
